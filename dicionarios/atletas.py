@@ -19,10 +19,12 @@ try:
         6: "Técnico"
     }
     
-    botafogo = filter (lambda x: x['clube_id'] == 263, atletas)
+
+    botafogo = filter (lambda x: x['clube_id'] == 262, atletas)
     for atleta in botafogo:
         posicao_id = atleta['posicao_id']
         posicao_nome = posicoes.get(posicao_id, 'Desconhecida')
+        
         print('\n')
         print (f"{atleta['apelido']} -> {atleta['nome']} | Posição: {posicao_nome} ({posicao_id})")
 except json.decoder.JSONDecodeError as e:
