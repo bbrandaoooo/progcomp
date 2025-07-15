@@ -20,12 +20,19 @@ try:
     }
     
 
-    botafogo = filter (lambda x: x['clube_id'] == 262, atletas)
-    for atleta in botafogo:
+    flamengo = filter (lambda x: x['clube_id'] == 262, atletas)
+
+    flamengo_sorted = sorted(
+        flamengo,
+        key=lambda x: x['preco_num'],
+        reverse=True
+    )
+
+    for atleta in flamengo_sorted:
         posicao_id = atleta['posicao_id']
         posicao_nome = posicoes.get(posicao_id, 'Desconhecida')
-        preco = float(atleta['preco_num'])
+        preco_sorted = f"C${atleta['preco_num']:.2f}"
         print('\n')
-        print (f"{atleta['apelido']} -> {atleta['nome']} | Posição: {posicao_nome} ({posicao_id}) | Preço: C$ {preco}")
+        print (f"{atleta['apelido']} -> {atleta['nome']} | Posição: {posicao_nome} ({posicao_id}) | Preço: {preco_sorted}")
 except json.decoder.JSONDecodeError as e:
     print ("Erro na conversão de JSON para dicionario")
