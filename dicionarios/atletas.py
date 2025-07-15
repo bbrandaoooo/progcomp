@@ -28,6 +28,8 @@ try:
         reverse=True
     )
 
+    print('Jogadores do Flamengo ordenados por preço (em ordem decrescente):')
+
     for atleta in flamengo_sorted:
         posicao_id = atleta['posicao_id']
         posicao_nome = posicoes.get(posicao_id, 'Desconhecida')
