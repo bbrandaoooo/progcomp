@@ -22,11 +22,7 @@ try:
 
     flamengo = filter (lambda x: x['clube_id'] == 262, atletas)
 
-    flamengo_sorted = sorted(
-        flamengo,
-        key=lambda x: x['preco_num'],
-        reverse=True
-    )
+    flamengo_sorted = sorted(flamengo, key=lambda x: x['preco_num'], reverse=True)
 
     print('Jogadores do Flamengo ordenados por preço (em ordem decrescente):')
 
